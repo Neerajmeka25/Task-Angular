@@ -1,0 +1,11 @@
+<link href='https://fonts.googleapis.com/css?family=Inter' rel='stylesheet'>
+<div id="body">
+  <nav>
+    <ul *ngFor="let data of navList" (click)="navigate(data)">
+      <li>{{data}}</li>
+    </ul>
+  </nav>
+</div>
+<!--<app-home></app-home>
+<app-dashboard></app-dashboard>-->
+<router-outlet></router-outlet>
