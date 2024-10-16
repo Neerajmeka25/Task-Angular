@@ -20,6 +20,7 @@ export class HomeComponent {
 
   onLogin() {
     if (this.loginForm.valid) {
+      //console.log(this.loginForm.value);
       const usern = this.loginForm.value.username;
       const passw = this.loginForm.value.password;
 
