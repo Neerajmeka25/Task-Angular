@@ -9,7 +9,7 @@ import { AuthService } from './services/auth.service';
 })
 export class AppComponent {
   title = 'task';
-  navList = ["home","dashboard","contact","about","logout"];
+  navList = ["home","dashboard","contact","about","insights","logout"];
 
   constructor(private route: Router, private auth: AuthService){ }
   navigate(data: string){

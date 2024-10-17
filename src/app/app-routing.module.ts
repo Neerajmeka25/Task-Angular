@@ -6,6 +6,7 @@ import { DashboardComponent } from './dashboard/dashboard.component';
 import { ContactComponent } from './contact/contact.component';
 import { ErrorComponent } from './error/error.component';
 import { AuthGuard } from './services/auth.guard';
+import { CompComponent } from './insights/comp/comp.component';
 
 const routes: Routes = [
   { 
@@ -23,6 +24,9 @@ const routes: Routes = [
   },
   {
     path: "dashboard", component: DashboardComponent, canActivate: [AuthGuard],
+  }, 
+  {
+    path: "insights", component: CompComponent,
   },
   {
     path: "**", component: ErrorComponent,

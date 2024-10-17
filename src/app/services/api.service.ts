@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http'
-import { BehaviorSubject, Observable, Subject } from 'rxjs';
+import { BehaviorSubject, filter, map, Observable, Subject } from 'rxjs';
 @Injectable({
   providedIn: 'root'
 })
@@ -10,13 +10,26 @@ export class ApiService {
   registeredData$ = this.registeredDataSubject.asObservable();
 
   constructor(private http: HttpClient) {}
+  employeeId: any[] = [];
 
   getUserData(): Observable<any[]> {
     return this.http.get<any[]>(this.apiUrl);
   }
 
-  updateRegisteredData(newData: any[]) {
+  getValue() {
+    return this.registeredDataSubject.asObservable();
+  }
+
+  updateEmployeeData(newData: any[]) {
     this.registeredDataSubject.next(newData);
+  }
+
+  deleteValue(empData: any){
+    let newEmp: any[] = this.registeredDataSubject.getValue();
+    let empId = empData.id;
+    newEmp = newEmp.filter(data=> data.id !== empId);
+    
+    this.registeredDataSubject.next(newEmp);
   }
 }
 

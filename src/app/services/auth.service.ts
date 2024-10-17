@@ -13,12 +13,10 @@ export class AuthService {
   login(username:string, password:string){
     if(username==this.validUsername && password==this.validPassword){
       this.isLoggedIn=true;
-      console.log("Login Successful");
       
     }
     else{
       this.isLoggedIn = false;
-      console.log("Login Unsuccessful")
     }
   }
 
