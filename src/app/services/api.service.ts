@@ -6,8 +6,8 @@ import { BehaviorSubject, filter, map, Observable, Subject } from 'rxjs';
 })
 export class ApiService {
   private apiUrl = 'https://jsonplaceholder.typicode.com/users';
-  private registeredDataSubject = new BehaviorSubject<any[]>([]);
-  registeredData$ = this.registeredDataSubject.asObservable();
+  private employeeDataSubject = new BehaviorSubject<any[]>([]);
+  employeeData$ = this.employeeDataSubject.asObservable();
 
   constructor(private http: HttpClient) {}
   employeeId: any[] = [];
@@ -17,19 +17,19 @@ export class ApiService {
   }
 
   getValue() {
-    return this.registeredDataSubject.asObservable();
+    return this.employeeDataSubject.asObservable();
   }
 
   updateEmployeeData(newData: any[]) {
-    this.registeredDataSubject.next(newData);
+    this.employeeDataSubject.next(newData);
   }
 
   deleteValue(empData: any){
-    let newEmp: any[] = this.registeredDataSubject.getValue();
+    let newEmp: any[] = this.employeeDataSubject.getValue();
     let empId = empData.id;
     newEmp = newEmp.filter(data=> data.id !== empId);
     
-    this.registeredDataSubject.next(newEmp);
+    this.employeeDataSubject.next(newEmp);
   }
 }
 

@@ -12,13 +12,8 @@ import { FormsModule } from '@angular/forms';
 import { ReactiveFormsModule } from '@angular/forms';
 import { Router,RouterModule } from '@angular/router';
 import { ErrorComponent } from './error/error.component';
-import { CompComponent } from './insights/comp/comp.component';
-import { CardModule } from 'primeng/card';
-import { ButtonModule } from 'primeng/button';
-import { InputTextModule } from 'primeng/inputtext';
-import { ProgressBarModule } from 'primeng/progressbar';
-// For dynamic progressbar demo
-import { ToastModule } from 'primeng/toast';
+
+import { SharedModule } from './shared.module';
 
 @NgModule({
   declarations: [
@@ -28,7 +23,6 @@ import { ToastModule } from 'primeng/toast';
     ContactComponent,
     AboutComponent,
     ErrorComponent,
-    CompComponent
   ],
   imports: [
     BrowserModule,
@@ -37,11 +31,7 @@ import { ToastModule } from 'primeng/toast';
     FormsModule,
     ReactiveFormsModule,
     RouterModule, 
-    CardModule,
-    ButtonModule,
-    InputTextModule,
-    ProgressBarModule,
-    ToastModule
+    SharedModule
   ],
   providers: [AuthGuard],
   bootstrap: [AppComponent]

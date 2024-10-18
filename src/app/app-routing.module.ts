@@ -6,8 +6,7 @@ import { DashboardComponent } from './dashboard/dashboard.component';
 import { ContactComponent } from './contact/contact.component';
 import { ErrorComponent } from './error/error.component';
 import { AuthGuard } from './services/auth.guard';
-import { CompComponent } from './insights/comp/comp.component';
-
+import { CompComponent } from './insights/comp.component';
 const routes: Routes = [
   { 
     path: "", redirectTo: '/home', pathMatch: 'full' 

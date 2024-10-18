@@ -31,7 +31,7 @@ export class DashboardComponent implements OnInit{
   }
 
   ngOnInit(): void {
-    this.api.registeredData$.subscribe(data => {
+    this.api.employeeData$.subscribe(data => {
       this.empData = Array.isArray(data) ? data : [];
     });
 

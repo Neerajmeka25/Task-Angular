@@ -1,0 +1,28 @@
+<div class="main">
+  <div class="cards">
+    <app-card *ngFor="let head of values" (click)="onPage(head)">
+      <p-card class="card-content"
+              [header]="head.reportType"
+              [style]="{ cursor: 'pointer', height: '250px', width: '400px', backgroundColor: '#f9f9f9', display: 'flex', 'justify-content': 'center', 'align-items': 'center', 'text-align': 'center' }"
+              styleClass="custom-card">
+      </p-card>
+    </app-card>
+  </div>
+
+  <div class="display" *ngIf="showValue">
+    <div class="display-content">
+      <h3>Details</h3>
+      <table>
+        <tbody>
+          <tr>
+            <td>Name</td>
+            <td *ngFor="let detail of (subdetails | keyvalue)">
+              {{ detail.value }}
+            </td>
+          </tr>
+        </tbody>
+      </table>
+      <button (click)="closePopup()">Close</button>
+    </div>
+  </div>
+</div>
