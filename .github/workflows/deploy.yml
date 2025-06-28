@@ -40,7 +40,7 @@ jobs:
       - name: Install dependency
         run: npm i
       - name: Build
-        run: ng build
+        run: ng build --base-href "/Task-Angular/"
       - name: Setup Pages
         uses: actions/configure-pages@v4
       - name: Upload artifact
