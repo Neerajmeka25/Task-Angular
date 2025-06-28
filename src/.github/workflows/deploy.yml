@@ -86,7 +86,7 @@ jobs:
 
           # Upload dist folder
 
-          path: './dist/my-dream-app/browser'
+          path: './dist/task'
 
       - name: Deploy to GitHub Pages
 
